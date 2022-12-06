@@ -4,6 +4,10 @@ using System.Linq;
  
 namespace Dapperpattern.API.Database
 {
+    public interface IDatabaseBootstrap
+    {
+        void Setup();
+    }
     public class DatabaseBootstrap : IDatabaseBootstrap
     {
         private readonly DatabaseConfig databaseConfig;
