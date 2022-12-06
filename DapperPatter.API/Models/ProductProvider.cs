@@ -1,18 +1,18 @@
-using Dapper;
+using DapperPatter.API.Database;
 using Microsoft.Data.Sqlite;
-using SqliteDapper.Demo.Database;
+using DapperPatter.API.Database;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 
 namespace DapperPatter.API.Models;
 
-public interface IProductRepository
+public interface IProductProvider
 {
 	Task<IEnumerable<Product>> Get();
 }
 
-public class ProductRepository : IProductRepository
+public class ProductProvider : IProductProvider
 {
 	private readonly DatabaseConfig databaseConfig;
 

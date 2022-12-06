@@ -1,20 +1,19 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using SqliteDapper.Demo.ProductMaster;
+using DapperPatter.API.Models;
 
 
-namespace DaperPatter.API.Controllers;
+namespace DapperPatter.API.Controllers;
 
 [ApiController]
-[Route("[controller]")]
-public class ProductMasterController : ControllerBase
+[Route("api/[controller]")]
+public class ProductController : ControllerBase
 {
 	private readonly IProductProvider productProvider;
 	private readonly IProductRepository productRepository;
 
-	public ProductController(IProductProvider productProvider,
-		IProductRepository productRepository)
+	public ProductController(IProductProvider productProvider, IProductRepository productRepository)
 	{
 		this.productProvider = productProvider;
 		this.productRepository = productRepository;

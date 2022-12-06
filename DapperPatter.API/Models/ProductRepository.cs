@@ -1,10 +1,13 @@
+using DapperPatter.API.Database;
+using Microsoft.Data.Sqlite;
+
 namespace DapperPatter.API.Models;
 
 public interface IProductRepository
 {
 	Task Create(Product product);
 }
-	public   class  ProductRepository: IProductRepository
+public class ProductRepository : IProductRepository
 {
 	private readonly DatabaseConfig databaseConfig;
 
