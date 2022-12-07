@@ -1,5 +1,6 @@
 using DapperPatter.API.Database;
 using Microsoft.Data.Sqlite;
+using Dapper;
 
 namespace DapperPatter.API.Models;
 
@@ -18,7 +19,7 @@ public class ProductRepository : IProductRepository
 
 	public async Task Create(Product product)
 	{
-		using var connection = new SqliteConnection(databaseConfig.Name);
+		var connection = new SqliteConnection(databaseConfig.Name);
 
 		await connection.ExecuteAsync("INSERT INTO Product (Name, Description)" +
 			"VALUES (@Name, @Description);", product);
